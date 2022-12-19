@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/{id}(id=${dto.getId()})}" th:object="${dto}">
+    <!--label for="date">Enter date: </label>
+    <input type="text" th:field="*{date}" id="date"/>
+    <br/-->
+    <label for="receipient">Enter receipient: </label>
+    <select th:field="*{receipient_id}" id="receipient">
+        <option th:each="user : ${users}" th:value="${user.getId()}" th:text="${user.getName()}"></option>
+    </select>
+    <br/>
+    <label for="summ">Enter summ: </label>
+    <input type="text" th:field="*{summ}" id="summ"/>
+    <br/>
+    <label for="message">Enter message: </label>
+    <input type="text" th:field="*{message}" id="message"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

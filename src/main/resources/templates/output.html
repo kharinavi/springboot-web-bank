@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show output</title>
+</head>
+<body>
+<div th:each="send : ${user.getSendTransactionList()}">
+
+    <a th:text="'Summa: '+ ${send.getSumm()} + ', date: ' + ${send.getDate()} + ', sendedTo: ' + ${send.getReceipient().getName()}">sended</a>
+</div>
+
+</body>
+</html>

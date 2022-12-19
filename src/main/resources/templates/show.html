@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Show user</title>
+</head>
+<body>
+
+<a th:text="'User name = '+${user.getName()}">VALUE</a>
+<br/>
+<a th:text="'Balance: '+${user.getSumm()}">VALUE</a>
+<br/>
+<a th:text="'Phone: '+${user.getPhone()}">VALUE</a>
+<br/>
+<!--a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a-->
+
+<a th:href="@{/{id}/output(id=${user.getId()})}">Output</a>
+<a th:href="@{/{id}/input(id=${user.getId()})}">Input</a>
+</br>
+<a th:href="@{/{id}/newT(id=${user.getId()})}">Create transaction</a>
+</br>
+<a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a>
+<form th:method="DELETE" th:action="@{/{id}/delete(id=${user.getId()})}">
+  <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
